@@ -45,6 +45,15 @@ cd ./libs
 cli_jar=$(find . -name "*.jar" | grep -oE "revanced-cli-[[:digit:]]\.[[:digit:]]\.[[:digit:]]-all\.jar")
 patches_jar=$(find . -name "*.jar" | grep -oE "revanced-patches-([[:digit:]]\.){1,3}jar")
 
+for var in "$yt_apk" "$integrations_apk" "$cli_jar" "$patches_jar"; do
+        if [ -z "$var" ]; then
+          printf 'Error: dependency not found. Please ensure the following files exist in ./build/libs/:'
+          printf '\n  * *youtube*.apk'
+          printf '\n  * revanced-integrations.apk'
+          printf '\n  * revanced-cli-*.jar'
+          printf '\n  * revanced-patches-*.jar'
+done
+
 if [ ! -d revanced-cache ] ; then
   printf '\nCreating directory: revanced-cache\n'
   mkdir revanced-cache
@@ -55,7 +64,7 @@ java -jar "$cli_jar" \
   --patches="$patches_jar" \
   --merge="../$integrations_apk" \
   --apk="../$yt_apk" \
-  --out="/build/revanced.apk" \
+  --out="../revanced.apk" \
   --temp-dir="revanced-cache" \
   --clean &&\
 printf '\nDone.\nYour patched APK can be found at: ./build/revanced.apk\n'
