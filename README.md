@@ -1,12 +1,12 @@
 # revanced-builder
 
-This repository contains the necessary components to build [ReVanced]() in a Docker container.
-
-## Usage
+This repository contains the necessary components to build [ReVanced](https://github.com/revanced) in a Docker container.
 
 Requires:
 * git
 * docker
+
+## Usage
 
 1. Download the APK for YouTube v17.20.37. This can be found [here 
 (APKMirror)](https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-20-37-release/youtube-17-20-37-2-android-apk-download/) 
