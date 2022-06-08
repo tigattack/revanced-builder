@@ -81,9 +81,8 @@ java -jar "$cli_jar" \
 	--out="revanced.apk" \
 	--temp-dir="revanced-cache"
 
-printf '\nPlease wait...\n'
-
 if [ -f ./revanced.apk ] ; then
+	printf '\nPlease wait...\n'
 	mv ./revanced.apk /build/
 	rm -rf revanced-cache
 	printf '\nDone.\nYour patched APK can be found at: ./build/revanced.apk\n'
