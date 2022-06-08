@@ -20,6 +20,7 @@ release](https://github.com/revanced/revanced-integrations/releases/latest).
 This is required to pull packages from GitHub.
 6. Run `build.sh <GitHub-username> <GitHub-PAT>`, e.g. `build.sh tigattack ghp_jkewbmn3r453hjebmdv` (not a valid 
 token).
+7. Once complete, you will find the patched APK at `build/revanced.apk`.
 
 ## References
 
